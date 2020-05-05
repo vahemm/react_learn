@@ -1,4 +1,4 @@
-.App {
+.app-wrapper {
   margin: auto;
   width: 90%;
   display: grid;
@@ -10,26 +10,5 @@
   grid-gap: 5px;
 }
 
-.header {
-  background-color: rgb(12, 23, 43);
-  grid-area: h;
-}
-.header img {
-  
-  width: 60px;
-}
-.nav {
-  background-color: rgb(121, 192, 125);
-  grid-area: n;
-}
-.contenier {
-  background-color: rgb(58, 135, 185);
-  grid-area: c;
-}
-.background {
-  width: 100%;
-  height: 200px;
-  background-image: url("https://images3.alphacoders.com/853/thumb-1920-85305.jpg");
-  background-size: cover;
-  border: 1px solid rgb(24, 233, 205);
-}
+
+
