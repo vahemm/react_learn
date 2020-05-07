@@ -5,10 +5,10 @@ const NavBar = () => {
   return (
     <nav className={n.nav}>
       <div className={`${n.item} ${n.active}`}>
-        <a>Profile</a>
+        <a href="profile">Profile</a>
       </div>
       <div className={n.item}>
-        <a>Messages</a>
+        <a href="dialogs">Messages</a>
       </div>
       <div className={n.item}>
         <a>News</a>

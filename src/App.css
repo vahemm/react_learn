@@ -9,6 +9,10 @@
   grid-template-rows: 60px 1fr;
   grid-gap: 5px;
 }
+.app-wrapper-content {
+  background-color: rgb(58, 135, 185);
+  grid-area: c;
+}
 
 
 
