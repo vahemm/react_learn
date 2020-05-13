@@ -3,27 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, {addText} from "./Redux/state";
+import store from "./Redux/state";
 import {BrowserRouter} from "react-router-dom";
-import {addPost} from "./Redux/state";
 
-export let rerender = (state) => {
+let rerender = (param) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App items={state.items}
-                     messages={state.messages}
-                     posts={state.posts}
-                     addPost={addPost}
-                     addText={addText}
-                     newText={state.newText}
+                <App state={param.getState()}
+                     addPost={param.addPost.bind(store)}
+                     addText={param.addText.bind(store)}
                 />
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-rerender(state)
+rerender(store)
+store.observer(rerender)
 
 
 // If you want your app to work offline and load faster, you can change
