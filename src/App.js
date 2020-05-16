@@ -8,7 +8,6 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 const App = (props) => {
     return (
-
         <div className="app-wrapper">
             <Header/>
             <NavBar/>
@@ -23,9 +22,7 @@ const App = (props) => {
                                               action={props.action}
                 />} path={"/dialogs"}/>
             </div>
-
         </div>
-
     );
 };
 
