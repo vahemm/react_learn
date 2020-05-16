@@ -7,10 +7,10 @@ import {addMessageText, sendMessage} from "../../../Redux/gialogsReducer";
 
 const Dialogs = (props) => {
 
-    let messageItems = props.messages.messages.map((item) => {
+    let messageItems = props.state.messages.map((item) => {
         return <Message message={item.message}/>
     })
-    let dilogItems = props.items.map((item) => {
+    let dilogItems = props.state.items.map((item) => {
         return <DialogItem name={item.name} id={item.id}/>
     })
     let updateText = (e) => {
@@ -29,7 +29,7 @@ const Dialogs = (props) => {
             <div className={d.messages}>
                 <div>{messageItems}</div>
                 <div>
-                    <textarea onChange={updateText} value={props.messages.messageText}/>
+                    <textarea onChange={updateText} value={props.state.messageText}/>
                 </div>
                 <div>
                     <button onClick={sendNewMessage}>Send</button>

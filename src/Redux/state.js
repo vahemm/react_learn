@@ -33,7 +33,7 @@ let store = {
     getState() {
         return this._state
     },
-    observer(rerender) {
+    subscribe(rerender) {
         this.callSubscribe = rerender;
     },
     callSubscribe() {
