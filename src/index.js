@@ -11,8 +11,8 @@ let rerender = (param) => {
         <React.StrictMode>
             <BrowserRouter>
                 <App state={param.getState()}
-                     addPost={param.addPost.bind(store)}
-                     addText={param.addText.bind(store)}
+                     dispatch={param.dispatch.bind(store)}
+                     action={param.actions}
                 />
             </BrowserRouter>
         </React.StrictMode>,

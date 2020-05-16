@@ -1,3 +1,6 @@
+import dispatchPost from "./profileReducer";
+import pispatchMessage from "./gialogsReducer";
+
 let store = {
     _state: {
         dialogPage: {
@@ -14,7 +17,8 @@ let store = {
                 {id: "3", message: "Good"},
                 {id: "4", message: "Bad"},
                 {id: "5", message: "Go"}
-            ]
+            ],
+            messageText: ""
         },
         profilePage: {
             posts: [
@@ -22,35 +26,25 @@ let store = {
                 {id: "2", message: "Let's go", likeCounter: "45"},
                 {id: "3", message: "Go", likeCounter: "32"},
                 {id: "4", message: "First post", likeCounter: "15"}
-            ]
-        },
-        newText: ""
+            ],
+            newText: "",
+        }
     },
-    getState (){
+    getState() {
         return this._state
     },
-    addText(addedText) {
-        this._state.newText = addedText;
-        this.callSubscribe(this);
-    },
-    addPost() {
-        let newPost = {
-            id: `${this._state.profilePage.posts.length + 1}`,
-            message: this._state.newText,
-            likeCounter: 0
-        }
-        this._state.profilePage.posts.push(newPost)
-        this._state.newText = ""
-        this.callSubscribe(this);
-    },
-
     observer(rerender) {
         this.callSubscribe = rerender;
     },
     callSubscribe() {
         console.log("Observer run")
-    }
+    },
 
+    dispatch(action) {
+        dispatchPost(action, this.getState().profilePage);
+        pispatchMessage(action, this.getState().dialogPage);
+        this.callSubscribe(this);
+    }
 }
 
 export default store;
