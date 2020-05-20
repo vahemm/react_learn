@@ -23,7 +23,7 @@ let initialState = {
     messageText: ""
 }
 
-const dispatchMessage = (state = initialState, action) => {
+const dialogsReduser = (state = initialState, action) => {
     switch (action.type) {
         case "addMessageText":
             return {
@@ -41,4 +41,4 @@ const dispatchMessage = (state = initialState, action) => {
             return state;
     }
 }
-export default dispatchMessage;
+export default dialogsReduser;

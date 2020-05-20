@@ -1,10 +1,12 @@
 import {combineReducers, createStore} from "redux";
-import dispatchPost from "./profileReducer";
-import dispatchMessage from "./gialogsReducer";
+import profileReduser from "./profileReducer";
+import dialogsReduser from "./gialogsReducer";
+import usersReducer from "./usersReducer";
 
 let reducers = combineReducers({
-    profilePage: dispatchPost,
-    dialogPage: dispatchMessage
+    profilePage: profileReduser,
+    dialogPage: dialogsReduser,
+    usersPage: usersReducer
 });
 
 let store = createStore(reducers);

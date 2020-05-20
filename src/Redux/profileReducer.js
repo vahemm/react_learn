@@ -16,7 +16,7 @@ let initialState = {
     ],
     newText: "",
 }
-const dispatchPost = (state = initialState, action) => {
+const profileReduser = (state = initialState, action) => {
     switch (action.type) {
         case "addPostText":
             return {
@@ -34,4 +34,4 @@ const dispatchPost = (state = initialState, action) => {
             return state
     }
 }
-export default dispatchPost;
+export default profileReduser;

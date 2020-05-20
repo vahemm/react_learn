@@ -1,7 +1,4 @@
 import React from "react";
-import d from "./Dialogs.module.css"
-import DialogItem from "./DialogItems/DialogItems";
-import Message from "./Messages/Messages";
 import {addMessageText, sendMessage} from "../../../Redux/gialogsReducer";
 import Dialogs from "./Dialogs";
 import StoreContext from "../../../StoreContext";
