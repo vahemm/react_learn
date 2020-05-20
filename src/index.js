@@ -5,15 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from "./Redux/reduxStore";
 import {BrowserRouter} from "react-router-dom";
+import StoreContext from "./StoreContext";
+import {Provider} from "react-redux";
 
 let rerender = (param) => {
 
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={param.getState()}
-                     dispatch={param.dispatch}
-                />
+                <Provider store={store}>
+                    <App/>
+                </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')

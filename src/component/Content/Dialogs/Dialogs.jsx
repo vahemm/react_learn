@@ -2,8 +2,6 @@ import React from "react";
 import d from "./Dialogs.module.css"
 import DialogItem from "./DialogItems/DialogItems";
 import Message from "./Messages/Messages";
-import {addMessageText, sendMessage} from "../../../Redux/gialogsReducer";
-
 
 const Dialogs = (props) => {
 
@@ -13,13 +11,13 @@ const Dialogs = (props) => {
     let dilogItems = props.state.items.map((item) => {
         return <DialogItem name={item.name} id={item.id}/>
     })
-    let updateText = (e) => {
+    let onUpdateText = (e) => {
         let text = e.target.value;
-        props.dispatch(addMessageText(text))
+        props.updateText(text)
 
     }
-    let sendNewMessage = () => {
-        props.dispatch(sendMessage())
+    let onSendNewMessage = () => {
+        props.sendNewMessage()
     }
     return (
         <div className={d.dialogs}>
@@ -29,10 +27,10 @@ const Dialogs = (props) => {
             <div className={d.messages}>
                 <div>{messageItems}</div>
                 <div>
-                    <textarea onChange={updateText} value={props.state.messageText}/>
+                    <textarea onChange={onUpdateText} value={props.state.messageText}/>
                 </div>
                 <div>
-                    <button onClick={sendNewMessage}>Send</button>
+                    <button onClick={onSendNewMessage}>Send</button>
                 </div>
             </div>
         </div>

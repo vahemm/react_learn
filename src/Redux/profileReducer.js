@@ -19,17 +19,17 @@ let initialState = {
 const dispatchPost = (state = initialState, action) => {
     switch (action.type) {
         case "addPostText":
-            state.newText = action.addedText;
-            return state;
-        case "addPost" :
-            let newPost = {
-                id: `${state.posts.length + 1}`,
-                message: state.newText,
-                likeCounter: 0
+            return {
+                ...state,
+                newText:action.addedText
             }
-            state.posts.push(newPost)
-            state.newText = "";
-            return state;
+        case "addPost" :
+            return {
+                ...state,
+                posts:[...state.posts, {id:`${state.posts.length + 1}`, message:state.newText, likeCounter: 0}],
+                newText:""
+            }
+
         default:
             return state
     }

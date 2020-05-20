@@ -26,16 +26,17 @@ let initialState = {
 const dispatchMessage = (state = initialState, action) => {
     switch (action.type) {
         case "addMessageText":
-            state.messageText = action.addedMessageText;
-            return state;
-        case "sendMessage":
-            let newMessage = {
-                id: `${state.messages.length + 1}`,
-                message: state.messageText
+            return {
+                ...state,
+                messageText: action.addedMessageText
             }
-            state.messages.push(newMessage);
-            state.messageText = "";
-            return state
+
+        case "sendMessage":
+            return {
+                ...state,
+                messages: [...state.messages,{id: `${state.messages.length+1}`, message:state.messageText}],
+                messageText:""
+            }
         default:
             return state;
     }
