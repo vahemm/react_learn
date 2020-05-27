@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from "./Redux/reduxStore";
 import {BrowserRouter} from "react-router-dom";
-import StoreContext from "./StoreContext";
 import {Provider} from "react-redux";
 
 let rerender = (param) => {
