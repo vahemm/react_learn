@@ -3,7 +3,6 @@ import s from "./Users.module.css"
 
 const Users = (props) => {
 
-
     return (<div> {
         props.state.users.map(u => <div className={s.user}>
 
